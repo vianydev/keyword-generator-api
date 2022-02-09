@@ -12,10 +12,10 @@ const db = knex({
     client: 'pg',
     version: '7.2',
     connection: {
-        host : '127.0.0.1',
-        user : 'vianey',
-        password : '',
-        database : 'keyword-generator'
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
     }
 });
 
